@@ -1,5 +1,5 @@
-let saldoVitorias = 15
-let saldoDerrotas = 8
+let saldoVitorias = 36
+let saldoDerrotas = 17
 let ranking
 
 function calculadoraDeRanking(vitorias, derrotas, nivel){
@@ -9,6 +9,12 @@ function calculadoraDeRanking(vitorias, derrotas, nivel){
     for (let i = 0; i <= 7; i++){
         if (s < 10){
             nivel = 'Ferro'
+        } else if (s >= 11 && s <= 20){
+            nivel = 'Bronze'
+        } else if (s >= 21 && s <= 30){
+            nivel = 'Prata'
+        } else if (s >= 31 && s <= 40){
+            nivel = 'Ouro'
         }
     }
     console.log(`O herói tem saldo de ${s} vitórias e está no nível ${nivel}`)
