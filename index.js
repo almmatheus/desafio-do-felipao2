@@ -1,6 +1,4 @@
-let saldoVitorias = 36
-let saldoDerrotas = 4
-let ranking
+const prompt = require('prompt-sync')();
 
 function calculadoraDeRanking(vitorias, derrotas, nivel){
 
@@ -24,6 +22,10 @@ function calculadoraDeRanking(vitorias, derrotas, nivel){
 
     console.log(`O herói tem saldo de ${s} vitórias e está no nível ${nivel}`)
 }
+
+let saldoVitorias = prompt('Saldo de vitorias do herói: ')
+let saldoDerrotas = prompt('Saldo de derrotas do herói: ')
+let ranking
 
 calculadoraDeRanking(saldoVitorias, saldoDerrotas, ranking)
 
