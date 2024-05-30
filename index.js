@@ -2,37 +2,37 @@ const prompt = require('prompt-sync')();
 
 function calculadoraDeRanking(vitorias, derrotas, nivel){
 
-    let s = vitorias - derrotas
+    let saldoVitorias = vitorias - derrotas
     
-    if (s < 10){
+    if (saldoVitorias < 10){
         nivel = 'Ferro'
-    } else if (s >= 11 && s <= 20){
+    } else if (saldoVitorias >= 11 && saldoVitorias <= 20){
         nivel = 'Bronze'
-    } else if (s >= 21 && s <= 50){
+    } else if (saldoVitorias >= 21 && saldoVitorias <= 50){
         nivel = 'Prata'
-    } else if (s >= 51 && s <= 80){
+    } else if (saldoVitorias >= 51 && saldoVitorias <= 80){
         nivel = 'Ouro'
-    } else if (s >= 81 && s <= 90){
+    } else if (saldoVitorias >= 81 && saldoVitorias <= 90){
         nivel = 'Diamante'
-    } else if (s >= 91 && s <= 100){
+    } else if (saldoVitorias >= 91 && saldoVitorias <= 100){
         nivel = 'Lendário'
     } else {
         nivel = 'Imortal'
     }
 
-    console.log(`O herói tem saldo de ${s} vitórias e está no nível ${nivel}`)
+    console.log(`O herói tem saldo de ${saldoVitorias} vitórias e está no nível ${nivel}`)
 }
 
 let resp
-let saldoVitorias
-let saldoDerrotas
+let vitorias
+let derrotas
 let ranking
 
 do{
     
-    saldoVitorias = prompt('Saldo de vitorias do herói: ')
-    saldoDerrotas = prompt('Saldo de derrotas do herói: ')
-    calculadoraDeRanking(saldoVitorias, saldoDerrotas, ranking)
+    vitorias = prompt('Saldo de vitorias do herói: ')
+    derrotas = prompt('Saldo de derrotas do herói: ')
+    calculadoraDeRanking(vitorias, derrotas, ranking)
     resp = prompt('Fazer novo cálculo de ranking? [S/N] ')
     
 } while (resp === 'S' || resp === 's')
