@@ -1,22 +1,27 @@
 let saldoVitorias = 36
-let saldoDerrotas = 17
+let saldoDerrotas = 4
 let ranking
 
 function calculadoraDeRanking(vitorias, derrotas, nivel){
 
     let s = vitorias - derrotas
     
-    for (let i = 0; i <= 7; i++){
-        if (s < 10){
-            nivel = 'Ferro'
-        } else if (s >= 11 && s <= 20){
-            nivel = 'Bronze'
-        } else if (s >= 21 && s <= 30){
-            nivel = 'Prata'
-        } else if (s >= 31 && s <= 40){
-            nivel = 'Ouro'
-        }
+    if (s < 10){
+        nivel = 'Ferro'
+    } else if (s >= 11 && s <= 20){
+        nivel = 'Bronze'
+    } else if (s >= 21 && s <= 50){
+        nivel = 'Prata'
+    } else if (s >= 51 && s <= 80){
+        nivel = 'Ouro'
+    } else if (s >= 81 && s <= 90){
+        nivel = 'Diamante'
+    } else if (s >= 91 && s <= 100){
+        nivel = 'Lendário'
+    } else if (s >= 101) {
+        nivel = 'Imortal'
     }
+
     console.log(`O herói tem saldo de ${s} vitórias e está no nível ${nivel}`)
 }
 
